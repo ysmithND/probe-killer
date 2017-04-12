@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:background="#ffaa00"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+    <TextView
+        android:text="Your Mom's House"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/evilIconSmall"
+        android:layout_toEndOf="@+id/evilIconSmall"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/ssidTextView"
+        tools:text="Your Mom's House"
+        android:textColor="#ffffffff"
+        android:textSize="26sp"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bssidTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/ssidTextView"
+        android:layout_alignStart="@+id/ssidTextView"
+        android:layout_marginTop="83dp"
+        android:textSize="16sp"
+        android:textColor="#bbffffff"
+        tools:text="aa:bb:cc:dd:ee:ff"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/no_signal"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp"
+        android:id="@+id/sigStrengthImageView"
+        android:layout_alignTop="@+id/ssidTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/encryptionTextView"
+        tools:text="WPA_PSK"
+        android:textColor="#ffffffff"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_alignBaseline="@+id/ssidTextView"
+        android:layout_alignBottom="@+id/ssidTextView"
+        android:layout_toRightOf="@+id/ssidTextView"
+        android:layout_toEndOf="@+id/ssidTextView"
+        android:textSize="22sp"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/evil_icon_small"
+        android:id="@+id/evilIconSmall"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:text="@string/net_recommendation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/networkRecommender"
+        android:layout_alignTop="@+id/bssidTextView"
+        android:layout_alignEnd="@id/signalStrengthIndicator"
+        android:layout_alignRight="@id/bssidTextView"
+        android:layout_toRightOf="@id/bssidTextView"
+        android:layout_toEndOf="@id/bssidTextView"
+        android:paddingLeft="50dp"
+        android:textColor="#bbffffff"
+        android:textSize="16sp"
+        />
+</RelativeLayout>

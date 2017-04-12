@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_available_networks"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_gradient"
+    tools:context="com.pwnieexpress.yolondasmith.networkminder.ui.AvailableNetworks">
+
+    <TextView
+        android:text="Available Networks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/availableNetworksTitleView"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#88E9AA1C"
+        android:textStyle="normal|bold"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/availableNetworksTitleView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="94dp"
+        android:id="@android:id/list"/>
+
+        <TextView
+            android:text="Wi Fi is Disabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@android:id/empty"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:textColor="#ffffffff"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="22dp"
+            android:layout_below="@+id/availableNetworksTitleView"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/navList3"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        android:background="#ffeeeeee"/>
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_device_score"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_gradient"
+    tools:context="com.pwnieexpress.yolondasmith.networkminder.ui.DeviceScore">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:id="@+id/deviceScoreTitleView"
+        android:text="@string/device_risk_score_title"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        android:textColor="#ccffffff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/retainedNetworkAdvice"
+        android:text="@string/retained_config_advice"
+        android:textStyle="normal|italic"
+        android:textSize="18sp"
+        android:textColor="#55ffffff"
+        android:layout_below="@+id/deviceProbeCount"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="@string/weak_ap_encryption_advice"
+        android:textStyle="normal|italic"
+        android:textSize="18sp"
+        android:textColor="#55ffffff"
+        android:layout_below="@+id/retainedNetworkAdvice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/weakSecurityAdvice"/>
+
+    <TextView
+        android:text="# Connections to APs With No Encryption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/noEncryptionConnections"
+        android:textSize="22sp"
+        android:textColor="#bbffffff"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/weakSecurityAdvice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_encryption_ap_advice"
+        android:textStyle="normal|italic"
+        android:textSize="18sp"
+        android:textColor="#55ffffff"
+        android:id="@+id/noEncryptionAPAdvice"
+        android:layout_below="@+id/noEncryptionConnections"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:text="@string/good_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/encouragerView"
+        android:textAlignment="center"
+        android:textColor="#ccffffff"
+        android:textSize="28sp"
+        android:layout_below="@+id/totalScoreValue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:text="# Connections to Weakly Encrypted APs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weakEncryptionConnections"
+        android:textSize="22sp"
+        android:textColor="#bbffffff"
+        android:layout_below="@+id/retainedNetworkAdvice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp"/>
+
+    <TextView
+        android:text="# Connections to Weak Preferred Network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weakPreferredNetwork"
+        android:textSize="22sp"
+        android:textColor="#bbffffff"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/noEncryptionAPAdvice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/weak_pref_network_advice"
+        android:textStyle="normal|italic"
+        android:textSize="18sp"
+        android:textColor="#55ffffff"
+        android:id="@+id/weakPrefNetworkAdvice"
+        android:layout_below="@+id/weakPreferredNetwork"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:text="# Confirmed Evil AP Connections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/evilAPCompromise"
+        android:textSize="22sp"
+        android:textColor="#bbffffff"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/weakPrefNetworkAdvice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/evil_ap_advice"
+        android:textStyle="normal|italic"
+        android:textSize="18sp"
+        android:textColor="#55ffffff"
+        android:id="@+id/evilAPAdvice"
+        android:layout_below="@+id/evilAPCompromise"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:text="1.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weakPrefNetScore"
+        android:textSize="28sp"
+        android:textColor="#ff00ff00"
+        android:textStyle="normal|bold"
+        android:layout_alignBaseline="@+id/weakPreferredNetwork"
+        android:layout_alignBottom="@+id/weakPreferredNetwork"
+        android:layout_alignLeft="@+id/weakAPScore"
+        android:layout_alignStart="@+id/weakAPScore"/>
+
+    <TextView
+        android:text="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/noEncryptionScore"
+        android:textSize="28sp"
+        android:textColor="#ff00ff00"
+        android:textStyle="normal|bold"
+        android:layout_alignBaseline="@+id/noEncryptionConnections"
+        android:layout_alignBottom="@+id/noEncryptionConnections"
+        android:layout_alignLeft="@+id/retainedScore"
+        android:layout_alignStart="@+id/retainedScore"/>
+
+    <TextView
+        android:text="3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/evilAPScore"
+        android:textSize="28sp"
+        android:textColor="#ff00ff00"
+        android:textStyle="normal|bold"
+        android:layout_alignTop="@+id/evilAPCompromise"
+        android:layout_alignLeft="@+id/noEncryptionScore"
+        android:layout_alignStart="@+id/noEncryptionScore"/>
+
+    <TextView
+        android:text="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/retainedScore"
+        android:textSize="28sp"
+        android:textStyle="normal|bold"
+        android:textColor="#ff00ff00"
+        android:layout_alignTop="@+id/deviceProbeCount"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="49dp"
+        android:layout_marginEnd="49dp"/>
+
+    <TextView
+        android:text="1.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weakAPScore"
+        android:textSize="28sp"
+        android:textColor="#ff00ff00"
+        android:textStyle="normal|bold"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp"
+        android:layout_alignBottom="@+id/weakEncryptionConnections"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:text="out of"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dividerTextView"
+        android:textSize="55sp"
+        android:textColor="@android:color/holo_orange_light"
+        android:layout_alignBaseline="@+id/totalScoreValue"
+        android:layout_alignBottom="@+id/totalScoreValue"
+        android:layout_toRightOf="@+id/scoreReason"
+        android:layout_toEndOf="@+id/scoreReason"/>
+
+    <TextView
+        android:text="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scoreValue"
+        android:textSize="200sp"
+        android:textColor="#ff00ff00"
+        android:textAlignment="center"
+        android:layout_alignTop="@+id/deviceScoreTitleView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"/>
+
+    <TextView
+        android:text="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/totalScoreValue"
+        android:textSize="65sp"
+        android:textColor="@android:color/holo_orange_light"
+        android:layout_marginTop="195dp"
+        android:layout_below="@+id/deviceScoreTitleView"
+        android:layout_toRightOf="@+id/dividerTextView"
+        android:paddingLeft="4dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"/>
+
+    <TextView
+        android:text="# Retained Network Configurations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deviceProbeCount"
+        android:textSize="22sp"
+        android:textColor="#bbffffff"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:text="How You Got This Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scoreReason"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="normal|bold|italic"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAllCaps="false"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_below="@+id/encouragerView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+</RelativeLayout>
+    <!-- Side navigation drawer UI -->
+    <ListView
+        android:id="@+id/navList2"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        android:background="#ffeeeeee"
+        />
+
+</android.support.v4.widget.DrawerLayout>

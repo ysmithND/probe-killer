@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_current_connection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@mipmap/second_page"
+    tools:context="com.pwnieexpress.yolondasmith.networkminder.ui.CurrentConnection">
+
+    <TextView
+        android:text="SSID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/netNameExplainer"
+        android:textSize="32sp"
+        android:textColor="#ffffffff"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/currentConnectionTitleText"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/no_signal"
+        android:id="@+id/signalStrengthIndicator"
+        android:layout_above="@+id/preferredNetworkExplainerView"
+        android:layout_alignLeft="@+id/encryptionExplainerView"
+        android:layout_alignStart="@+id/encryptionExplainerView"
+        android:layout_marginBottom="17dp"/>
+
+    <TextView
+        android:text="No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/preferredNetworkExplainerView"
+        android:textSize="18sp"
+        android:textColor="#ffffffff"
+        android:textAlignment="viewStart"
+        android:layout_gravity="start"
+        android:paddingLeft="40dp"
+        android:layout_alignBaseline="@+id/preferredNetworkTitleView"
+        android:layout_alignBottom="@+id/preferredNetworkTitleView"
+        android:layout_alignRight="@+id/signalStrengthIndicator"
+        android:layout_alignEnd="@+id/signalStrengthIndicator"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:text="Link Speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linkSpeed"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#ccffffff"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textAllCaps="true"
+        android:layout_below="@+id/preferredNetworkExplainerView"
+        android:layout_alignLeft="@+id/encryptionTitleView"
+        android:layout_alignStart="@+id/encryptionTitleView"
+        android:layout_marginTop="23dp"/>
+
+    <TextView
+        android:text="100Mbps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linkSpeed"
+        android:layout_alignLeft="@+id/signalStrengthIndicator"
+        android:layout_alignStart="@+id/signalStrengthIndicator"
+        android:id="@+id/linkSpeedData"
+        android:textSize="18sp"
+        android:textColor="#ffffffff"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:text="Evil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linkSpeed"
+        android:layout_alignLeft="@+id/encryptionTitleView"
+        android:layout_alignStart="@+id/encryptionTitleView"
+        android:layout_marginTop="19dp"
+        android:id="@+id/evilNetwork"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:textColor="#ccffffff"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/networkGrader"
+        android:text="@string/other_net_strength"
+        android:textColor="#FFF7C7"
+        android:textSize="20sp"
+        android:layout_below="@+id/evilNetwork"
+        android:layout_toRightOf="@+id/evilNetworkIcon"
+        android:layout_toEndOf="@+id/evilNetworkIcon"
+        android:textAlignment="textEnd"
+        android:layout_gravity="end"/>
+
+    <TextView
+        android:text="Yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/networkGrader"
+        android:layout_alignLeft="@+id/linkSpeedData"
+        android:layout_alignStart="@+id/linkSpeedData"
+        android:id="@+id/evilNetworkExplainer"
+        android:textSize="18sp"
+        android:textColor="#ffffffff"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:text="@string/net_change_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/networkChanges"
+        android:textColor="#FFF7C7"
+        android:textSize="20sp"
+        android:layout_below="@+id/networkGrader"
+        android:layout_alignLeft="@+id/networkGrader"
+        android:layout_alignStart="@+id/networkGrader"
+        android:textAlignment="textEnd"
+        android:layout_gravity="end"/>
+
+    <TextView
+        android:text="@string/tip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tip1"
+        android:layout_alignLeft="@+id/tip1"
+        android:layout_alignStart="@+id/tip1"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tip2"
+        android:textColor="#FFF7C7"
+        android:textStyle="normal|italic"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:text="@string/tip3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/tip3"
+        android:textColor="#FFF7C7"
+        android:textSize="16sp"
+        android:textStyle="normal|italic"
+        android:layout_below="@+id/tip2"
+        android:layout_alignLeft="@+id/tip2"
+        android:layout_alignStart="@+id/tip2"/>
+
+    <TextView
+        android:text="192.168.1.254"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ipAddress"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="26sp"
+        android:textColor="#ffffffff"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/macAddress"
+        android:layout_alignBottom="@+id/macAddress"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:text="WEAK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/encryptionExplainerView"
+        android:textColor="#ffff0000"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/encryptionTitleView"
+        android:layout_alignBottom="@+id/encryptionTitleView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="65dp"
+        android:layout_marginEnd="65dp"/>
+
+    <TextView
+        android:text="Preferred Network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/preferredNetworkTitleView"
+        android:textSize="18sp"
+        android:textColor="#ccffffff"
+        android:textAllCaps="true"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/signalStrenthTitleView"
+        android:layout_alignLeft="@+id/encryptionTitleView"
+        android:layout_alignStart="@+id/encryptionTitleView"
+        />
+
+    <TextView
+        android:text="Signal Strength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signalStrenthTitleView"
+        android:textColor="#ccffffff"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/encryptionTitleView"
+        android:layout_alignLeft="@+id/encryptionTitleView"
+        android:layout_alignStart="@+id/encryptionTitleView"/>
+
+    <TextView
+        android:text="Encryption Provided"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/encryptionTitleView"
+        android:textSize="18sp"
+        android:textColor="#ccffffff"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:textAllCaps="true"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/vendorLookUp"
+        android:layout_alignLeft="@+id/ipAddress"
+        android:layout_alignStart="@+id/ipAddress"/>
+
+    <TextView
+        android:text="Next Steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextStepsTitleView"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        android:textColor="#ccffffff"
+        android:layout_marginTop="18dp"
+        android:textAllCaps="true"
+        android:layout_below="@+id/networkChanges"
+        android:layout_alignLeft="@+id/evilNetwork"
+        android:layout_alignStart="@+id/evilNetwork"/>
+
+    <TextView
+        android:text="@string/tip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip1"
+        android:textColor="#FFF7C7"
+        android:textStyle="normal|italic"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="16sp"
+        android:layout_below="@+id/nextStepsTitleView"
+        android:layout_alignRight="@+id/encryptionExplainerView"
+        android:layout_alignEnd="@+id/encryptionExplainerView"/>
+
+    <TextView
+        android:text="Risk Points Earned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/riskPointsEarned"
+        android:textColor="#FFF7C7"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignTop="@+id/currNetTinyHorse"
+        android:layout_alignRight="@+id/evilNetwork"
+        android:layout_alignEnd="@+id/evilNetwork"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/evil_icon"
+        android:id="@+id/evilNetworkIcon"
+        android:layout_alignTop="@+id/signalStrenthTitleView"
+        android:layout_toRightOf="@id/macAddress"
+        android:layout_toEndOf="@id/macAddress"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:text="Current Connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentConnectionTitleText"
+        android:textSize="34sp"
+        android:textAlignment="center"
+        android:textColor="#FFF7C7"
+        android:textAllCaps="true"
+        android:textStyle="normal|bold"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/preferredNetworkExplainerView"
+        android:layout_toStartOf="@+id/preferredNetworkExplainerView"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/tiny_horse"
+        android:layout_marginBottom="27dp"
+        android:id="@+id/currNetTinyHorse"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/nextStepsTitleView"
+        android:layout_toEndOf="@id/nextStepsTitleView"
+        android:layout_marginLeft="55dp"
+        />
+
+    <TextView
+        android:text="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberRiskPointsEarned"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="40sp"
+        android:textColor="#FFF7C7"
+        android:layout_alignBottom="@+id/currNetTinyHorse"
+        android:layout_alignLeft="@+id/macAddress"
+        android:layout_alignStart="@+id/macAddress"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"/>
+
+    <TextView
+        android:text="ARRIS Group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/vendorLookUp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="26sp"
+        android:textColor="#ffffffff"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/ipAddress"
+        android:layout_alignBottom="@+id/ipAddress"
+        android:layout_alignRight="@+id/networkGrader"
+        android:layout_alignEnd="@+id/networkGrader"/>
+
+    <TextView
+        android:text="aa:bb:cc:dd:ee:ff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:id="@+id/macAddress"
+        android:textSize="26sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#ffffffff"
+        android:textAlignment="center"
+        android:layout_below="@+id/netNameExplainer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+</RelativeLayout>
+    <!-- Side navigation drawer UI -->
+    <ListView
+        android:id="@+id/navList"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        android:background="#ffeeeeee"
+        />
+
+</android.support.v4.widget.DrawerLayout>
